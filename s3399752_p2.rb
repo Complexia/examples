@@ -1,16 +1,15 @@
+require 'thor'
 
-if ARGV[0] == "welcome"
-  unless ARGV[1] == nil
-    puts "Welcome #{ARGV[1]}!"
+class Greet < Thor
+  desc "welcome", "Prints 'Welcome ${name}' to the console"
+
+
+  def welcome(name)
+
+    puts "Welcome #{name}!"
+
   end
 
+
 end
-
-if ARGV[1] == nil
-  puts "there is nothing"
-end
-
-
-
-
-puts "something"
+Greet.start
